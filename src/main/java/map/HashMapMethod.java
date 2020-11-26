@@ -31,16 +31,37 @@ import java.util.Map;
 /**
  * @author kaciry
  * @date 2020/11/26 15:16
- * @description
+ * @description HashMapMethod
  */
 public class HashMapMethod {
+    //Tip:
+    //
+    //HashMap允许key和value都为null;key具有唯一性；
+    //
+    //HashMap与HashTable不同之处是，HashMap不同步，HashTable不允许key，value为null；
+    //
+    //HashMap无法保证Map中内容的顺序
     public static void main(String[] args) {
+        /**
+         * The load factor used when none specified in constructor.
+         * 默认负载因子为 0.75f
+         */
+        // static final float DEFAULT_LOAD_FACTOR = 0.75f;初始化容量为16
+        /**
+         * The default initial capacity - MUST be a power of two.
+         * 必须为2的n次幂
+         */
+        //static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16
+        System.out.println("DEFAULT_INITIAL_CAPACITY: " + (1 << 4));
+        //HashMap的扩容算法，0.75 * 16 = 12；那么也就是插入12 个数之后HashMap会发生扩容；
         Map<String, Object> map = new HashMap<String, Object>();
+
         map.put("name", "ky");
         map.put("sex", "man");
         map.put("age", "24");
         map.put("pro", new Room("1", "2", "3", "4"));
 
+        //输出顺序与put的不一致，HashMap无法保证Map中内容的顺序
         System.out.println(map);
 
         //map转json
@@ -51,6 +72,15 @@ public class HashMapMethod {
         boolean containsKey1 = map.containsKey("age1");
         System.out.println("containsKey age: " + containsKey);
         System.out.println("containsKey age1: " + containsKey1);
+
+        //HashMap允许键值为null
+        map.put(null, null);
+        System.out.println(map);
+
+        //Hashtable不允许
+        //Hashtable hashtable = new Hashtable();
+        //hashtable.put(null,null);
+        //System.out.println(hashtable);
 
     }
 

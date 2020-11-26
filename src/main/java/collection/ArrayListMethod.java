@@ -35,6 +35,8 @@ public class ArrayListMethod {
         List<String> arrayList = new ArrayList<>();
         arrayList.add("java");
         arrayList.add("java");
+        arrayList.add("java");
+        arrayList.add("java");
         System.out.println("Original List: " + arrayList);
         //strings.remove(0);
         //只能删除一个对象
@@ -103,5 +105,6 @@ public class ArrayListMethod {
         arrayDeque.offer("1");
         arrayDeque.poll();
         System.out.println(arrayDeque.isEmpty());
+
     }
 }
