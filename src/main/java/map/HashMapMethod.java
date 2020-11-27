@@ -34,13 +34,12 @@ import java.util.Map;
  * @description HashMapMethod
  */
 public class HashMapMethod {
-    //Tip:
-    //
-    //HashMap允许key和value都为null;key具有唯一性；
-    //
-    //HashMap与HashTable不同之处是，HashMap不同步，HashTable不允许key，value为null；
-    //
-    //HashMap无法保证Map中内容的顺序
+    /*
+        Tip:
+        HashMap允许key和value都为null;key具有唯一性；
+        HashMap与HashTable不同之处是，HashMap不同步，HashTable不允许key，value为null；
+        HashMap无法保证Map中内容的顺序
+    */
     public static void main(String[] args) {
         /**
          * The load factor used when none specified in constructor.

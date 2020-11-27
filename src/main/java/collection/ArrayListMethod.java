@@ -106,5 +106,6 @@ public class ArrayListMethod {
         arrayDeque.poll();
         System.out.println(arrayDeque.isEmpty());
 
+
     }
 }

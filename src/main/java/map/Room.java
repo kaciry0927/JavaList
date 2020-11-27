@@ -23,6 +23,8 @@
  */
 package map;
 
+import java.util.Objects;
+
 /**
  * @author kaciry
  * @date 2020/11/26 15:33
@@ -43,6 +45,28 @@ public class Room {
 
     public String getS1() {
         return s1;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Room)) return false;
+
+        Room room = (Room) o;
+
+        if (!Objects.equals(s1, room.s1)) return false;
+        if (!Objects.equals(s2, room.s2)) return false;
+        if (!Objects.equals(s3, room.s3)) return false;
+        return Objects.equals(s4, room.s4);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = s1 != null ? s1.hashCode() : 0;
+        result = 31 * result + (s2 != null ? s2.hashCode() : 0);
+        result = 31 * result + (s3 != null ? s3.hashCode() : 0);
+        result = 31 * result + (s4 != null ? s4.hashCode() : 0);
+        return result;
     }
 
     public void setS1(String s1) {
